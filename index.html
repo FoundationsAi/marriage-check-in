@@ -6,7 +6,7 @@
 <title>Marriage Check-In Guides</title>
 <meta name="description" content="By Jeff &amp; Renae Brobst. Download the Weekly Marriage Check-In Guide and the 12-Month Marriage Growth Calendar for your phone, tablet, or computer, or print them.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#2f3238">
+<meta name="theme-color" content="#263533">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Marriage Check-In Guides">
 <meta property="og:description" content="By Jeff &amp; Renae Brobst. Weekly guide + 12-month calendar for your phone, tablet, laptop, or print.">
@@ -16,88 +16,229 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/cormorant-600.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face { font-family: 'Cormorant'; font-weight: 600; font-style: normal; font-display: swap; src: url(fonts/cormorant-600.woff2) format('woff2'); }
 @font-face { font-family: 'Cormorant'; font-weight: 500; font-style: italic; font-display: swap; src: url(fonts/cormorant-500i.woff2) format('woff2'); }
 @font-face { font-family: 'DM Sans'; font-weight: 400; font-display: swap; src: url(fonts/dmsans-400.woff2) format('woff2'); }
 @font-face { font-family: 'DM Sans'; font-weight: 500; font-display: swap; src: url(fonts/dmsans-500.woff2) format('woff2'); }
 @font-face { font-family: 'DM Sans'; font-weight: 700; font-display: swap; src: url(fonts/dmsans-700.woff2) format('woff2'); }
+
 :root {
-  --paper: #FAF6EF; --card: #FFFFFF; --ink: #2A2630; --soft: #625B66; --rule: #E6DCCB;
-  --gold: #B08A4A; --gold-light: #D9BE8C; --green: #23423D; --wine: #4A2137;
+  --paper: #FAF6EF; --sheet: #FFFFFF; --linen: #F1E9DC; --ink: #2A2630; --soft: #625B66; --rule: #E6DCCB;
+  --gold: #B08A4A; --gold-ink: #8A6A33; --gold-light: #D9BE8C; --green: #23423D; --wine: #4A2137; --slate: #2F3238;
+  --ease: cubic-bezier(.22,.8,.24,1);
   color-scheme: light;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; }
-body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', system-ui, sans-serif; line-height: 1.5;
-       font-variant-numeric: lining-nums; min-height: 100vh; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.55;
+       font-variant-numeric: lining-nums; min-height: 100vh; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
 a { color: inherit; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 8px; }
 
+/* ───────── hero ───────── */
 .hero { position: relative; overflow: hidden; color: var(--paper); text-align: center;
-        background: linear-gradient(135deg, var(--green) 0%, #2f3238 50%, var(--wine) 100%);
-        padding: calc(48px + env(safe-area-inset-top)) 20px 118px; }
-.hero::before, .hero::after { content: ''; position: absolute; width: 360px; height: 360px; border-radius: 50%;
-        border: 1.5px solid rgba(217,190,140,.14); bottom: -250px; }
-.hero::before { left: calc(50% - 290px); }
-.hero::after { left: calc(50% - 70px); }
-.emblem { display: block; margin: 0 auto; }
-.kicker { font-size: 11px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-light); margin-top: 20px; }
-h1 { font-family: 'Cormorant', serif; font-weight: 600; font-size: clamp(40px, 11vw, 58px); line-height: 1; margin-top: 12px; letter-spacing: -.01em; }
-h1 em { font-style: italic; font-weight: 500; color: var(--gold-light); display: block; font-size: .78em; margin-bottom: 4px; }
-.byline { font-family: 'Cormorant', serif; font-style: italic; font-weight: 500; font-size: 21px; color: var(--gold-light); margin-top: 14px;
-          display: flex; align-items: center; justify-content: center; gap: 12px; }
-.byline::before, .byline::after { content: ''; width: 28px; height: 1px; background: var(--gold-light); opacity: .55; }
-.sub { margin: 14px auto 0; max-width: 32ch; font-size: 16px; color: rgba(250,246,239,.88); text-wrap: balance; }
-.uses { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 16px auto 0; max-width: 420px; padding: 0; list-style: none; }
-.uses li { display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-           color: var(--gold-light); border: 1px solid rgba(217,190,140,.4); border-radius: 999px; padding: 5px 10px 5px 8px; }
-@media (max-width: 379px) { .uses { gap: 4px; } .uses li { font-size: 9.5px; letter-spacing: .06em; padding: 5px 8px 5px 7px; gap: 4px; } .uses svg { width: 13px; height: 13px; } }
-@media (min-width: 480px) { .uses { gap: 8px; } .uses li { font-size: 11.5px; letter-spacing: .12em; padding: 6px 12px 6px 10px; } }
-.uses svg { flex: none; }
+        background:
+          radial-gradient(60% 45% at 50% 22%, rgba(217,190,140,.16), transparent 70%),
+          linear-gradient(140deg, var(--green) 0%, var(--slate) 52%, var(--wine) 100%);
+        padding: calc(40px + env(safe-area-inset-top)) 20px 132px; }
+.hero .halo { position: absolute; width: 380px; height: 380px; border-radius: 50%; border: 1.5px solid rgba(217,190,140,.13); bottom: -270px; }
+.hero .halo.a { left: calc(50% - 300px); }
+.hero .halo.b { left: calc(50% - 80px); }
 
-main { max-width: 860px; margin: -84px auto 0; padding: 0 16px calc(40px + env(safe-area-inset-bottom)); position: relative; }
-.cards { display: grid; gap: 16px; }
-@media (min-width: 760px) { .cards { grid-template-columns: 1fr 1fr; } }
-.card { background: var(--card); border-radius: 20px; padding: 18px; display: grid; grid-template-columns: 112px 1fr; gap: 16px 18px; align-items: center;
-        box-shadow: 0 1px 2px rgba(42,38,48,.06), 0 12px 32px -12px rgba(42,38,48,.22); border-top: 4px solid var(--accent); }
-.cover { width: 112px; aspect-ratio: 480 / 852; border-radius: 9px; object-fit: cover; display: block;
-         box-shadow: 0 6px 16px -6px rgba(0,0,0,.35); background: var(--accent); }
-.info { display: flex; flex-direction: column; min-width: 0; }
-.tag { font-size: 10.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
-.card h2 { font-family: 'Cormorant', serif; font-weight: 600; font-size: 25px; line-height: 1.08; margin-top: 4px; color: var(--ink); }
-.meta { font-size: 13px; color: var(--soft); margin-top: 6px; }
+.seal { position: relative; width: 208px; height: 208px; margin: 0 auto; }
+.seal svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.year { animation: turn 160s linear 1.4s infinite; transform-origin: 104px 104px; }
+.year path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .7s var(--ease) forwards; }
+.mark path, .mark circle { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1s var(--ease) forwards; }
+.mark .c2 { animation-delay: .25s; } .mark .x { animation-delay: .45s; animation-duration: .6s; }
+.glow { position: absolute; inset: 38px; border-radius: 50%; background: radial-gradient(circle, rgba(217,190,140,.22), transparent 70%);
+        opacity: 0; animation: fade 1.6s ease .3s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes turn { to { transform: rotate(360deg); } }
+@keyframes fade { to { opacity: 1; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes lift { to { transform: none; } }
+
+.tagline { font-size: 14px; letter-spacing: .04em; color: var(--gold-light); margin-top: 18px; opacity: 0; animation: rise .8s var(--ease) .55s forwards; }
+h1 { font-family: 'Cormorant', Georgia, serif; font-weight: 600; font-size: clamp(44px, 12.5vw, 76px); line-height: .96; letter-spacing: -.015em; margin-top: 10px; }
+h1 .ln { display: block; overflow: hidden; padding-bottom: .06em; }
+h1 .ln span { display: inline-block; transform: translateY(105%); animation: lift .9s var(--ease) .55s forwards; }
+h1 .ln:nth-child(2) span { animation-delay: .67s; }
+.byline { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 16px;
+          font-family: 'Cormorant', Georgia, serif; font-style: italic; font-weight: 500; font-size: 23px; color: var(--gold-light);
+          opacity: 0; animation: fade .9s ease .95s forwards; }
+.byline::before, .byline::after { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .6; transform: scaleX(0);
+          animation: grow .9s var(--ease) 1.05s forwards; }
+.byline::before { transform-origin: right; } .byline::after { transform-origin: left; }
+.sub { margin: 16px auto 0; max-width: 34ch; color: rgba(250,246,239,.88); text-wrap: balance; opacity: 0; animation: rise .8s var(--ease) 1.05s forwards; }
+.uses { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 18px auto 0; list-style: none; }
+.uses li { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--gold-light);
+           border: 1px solid rgba(217,190,140,.38); border-radius: 999px; padding: 5px 12px 5px 9px; opacity: 0; animation: rise .6s var(--ease) forwards; }
+.uses li:nth-child(1) { animation-delay: 1.15s; } .uses li:nth-child(2) { animation-delay: 1.22s; }
+.uses li:nth-child(3) { animation-delay: 1.29s; } .uses li:nth-child(4) { animation-delay: 1.36s; }
+
+/* ───────── downloads ───────── */
+main { position: relative; max-width: 1000px; margin: -96px auto 0; padding: 0 16px calc(28px + env(safe-area-inset-bottom)); }
+.guides { display: grid; gap: 18px; }
+@media (min-width: 780px) { .guides { grid-template-columns: 1fr 1fr; gap: 22px; } }
+.guide { position: relative; background: var(--sheet); border-radius: 24px; padding: 22px 20px 20px; display: grid; grid-template-columns: 124px 1fr;
+         gap: 18px 30px; align-items: center; box-shadow: 0 1px 0 rgba(42,38,48,.04), 0 24px 48px -28px rgba(31,26,36,.45);
+         opacity: 0; animation: rise .9s var(--ease) forwards; }
+.guide.weekly { --accent: var(--green); animation-delay: 1.2s; }
+.guide.monthly { --accent: var(--wine); animation-delay: 1.32s; }
+.guide::before { content: ''; position: absolute; inset: 0 0 auto; height: 5px; border-radius: 24px 24px 0 0; background: var(--accent); }
+
+.book { position: relative; width: 124px; aspect-ratio: 480 / 852; display: block; }
+.book img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 10px;
+            box-shadow: 0 10px 22px -10px rgba(0,0,0,.45); transition: transform .55s var(--ease); background: var(--linen); }
+.book .p2 { transform: translate(10px, 6px) rotate(5deg); }
+.book .p1 { transform: translate(5px, 3px) rotate(2.5deg); }
+.book .cv { position: relative; }
+.book:hover .p2, .book:focus-visible .p2 { transform: translate(15px, 5px) rotate(8deg); }
+.book:hover .p1, .book:focus-visible .p1 { transform: translate(8px, 2px) rotate(4deg); }
+.book:hover .cv, .book:focus-visible .cv { transform: translate(-5px, -4px) rotate(-3deg); }
+.book .peek { position: absolute; right: -8px; bottom: -8px; z-index: 2; width: 34px; height: 34px; border-radius: 50%; background: var(--accent);
+              color: #fff; display: grid; place-items: center; box-shadow: 0 6px 14px -4px rgba(0,0,0,.4); transition: transform .3s var(--ease); }
+.book:hover .peek { transform: scale(1.1); }
+.gi { position: relative; z-index: 1; }
+.gi h2 { font-family: 'Cormorant', Georgia, serif; font-weight: 600; font-size: 27px; line-height: 1.06; color: var(--ink); text-wrap: balance; }
+.gi .kind { font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 3px; }
+.gi .meta { font-size: 14px; color: var(--soft); margin-top: 8px; }
 .btns { grid-column: 1 / -1; display: flex; gap: 10px; }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 18px;
-       border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; }
-.btn.primary { background: var(--accent); color: #fff; flex: 1 1 auto; box-shadow: 0 6px 14px -6px var(--accent); }
-.btn.ghost { color: var(--accent); border: 1.5px solid color-mix(in srgb, var(--accent) 35%, transparent); padding: 0 22px; flex: none; }
+.btn { position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 50px;
+       padding: 0 22px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none;
+       transition: transform .2s var(--ease), box-shadow .25s var(--ease), background-color .25s; -webkit-tap-highlight-color: transparent; }
+.btn.primary { flex: 1; background: var(--accent); color: #fff; box-shadow: 0 10px 20px -12px var(--accent); }
+.btn.primary::after { content: ''; position: absolute; top: 0; bottom: 0; width: 46%; left: -60%;
+       background: linear-gradient(100deg, transparent, rgba(255,255,255,.22), transparent); transform: skewX(-18deg);
+       animation: sheen 5.5s ease-in-out 2.6s infinite; }
+.monthly .btn.primary::after { animation-delay: 3.6s; }
+@keyframes sheen { 0%, 70% { left: -60%; } 88%, 100% { left: 130%; } }
+.btn.ghost { color: var(--accent); border: 1.5px solid color-mix(in srgb, var(--accent) 30%, transparent); }
 .btn:active { transform: scale(.97); }
-@media (hover: hover) { .btn.primary:hover { transform: translateY(-1px); box-shadow: 0 10px 20px -8px var(--accent); } }
-.btn svg { flex: none; }
-.weekly { --accent: var(--green); }
-.monthly { --accent: var(--wine); }
+@media (hover: hover) { .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 16px 26px -14px var(--accent); }
+                        .btn.ghost:hover { background: color-mix(in srgb, var(--accent) 7%, transparent); } }
+.btn.go .arrow { animation: drop .9s var(--ease); }
+.btn .ok { position: absolute; right: 18px; opacity: 0; transform: scale(.6); transition: opacity .3s, transform .4s var(--ease); }
+.btn.go .ok { opacity: 1; transform: none; }
+@keyframes drop { 0% { transform: none; } 35% { transform: translateY(7px); opacity: 0; } 36% { transform: translateY(-9px); opacity: 0; } 70%, 100% { transform: none; opacity: 1; } }
 
-.tip { margin-top: 18px; display: flex; gap: 12px; align-items: flex-start; background: #F2EBDF; border-radius: 16px; padding: 14px 16px;
-       font-size: 14px; color: var(--ink); }
-.tip svg { flex: none; color: var(--gold); margin-top: 1px; }
+/* ───────── section heads ───────── */
+.sec { margin-top: 64px; }
+.sec-h { display: flex; align-items: end; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; }
+.sec-h h2 { font-family: 'Cormorant', Georgia, serif; font-weight: 600; font-size: clamp(36px, 9vw, 46px); line-height: 1; color: var(--ink); }
+.sec-h p { color: var(--soft); font-size: 15px; max-width: 36ch; }
+
+/* ───────── look inside ───────── */
+.tabs { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; background: var(--linen); border-radius: 999px; padding: 4px; margin-top: 18px; }
+.tabs button { position: relative; z-index: 1; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 14.5px; color: var(--soft);
+               transition: color .3s; white-space: nowrap; }
+.tabs button[aria-selected="true"] { color: #fff; }
+.tabs .ind { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px; background: var(--green);
+             transition: transform .5s var(--ease), background-color .5s; box-shadow: 0 6px 14px -8px rgba(0,0,0,.5); }
+.tabs[data-set="m"] .ind { transform: translateX(100%); background: var(--wine); }
+
+.rail { position: relative; margin: 18px -16px 0; }
+.track { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 10px 16px 26px; scroll-padding: 0 16px;
+         scrollbar-width: none; overscroll-behavior-x: contain; }
+.track::-webkit-scrollbar { display: none; }
+.pg { flex: 0 0 auto; width: min(44vw, 210px); scroll-snap-align: start; text-align: left; }
+.pg button { display: block; width: 100%; border-radius: 12px; overflow: hidden; aspect-ratio: 480 / 852; background: var(--linen);
+             box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 16px 26px -18px rgba(31,26,36,.55); transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+.pg img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .5s; }
+.pg img.in { opacity: 1; }
+@media (hover: hover) { .pg button:hover { transform: translateY(-6px) rotate(-.6deg); box-shadow: 0 24px 34px -20px rgba(31,26,36,.6); } }
+.pg figcaption { font-size: 13.5px; line-height: 1.3; color: var(--soft); margin-top: 10px; padding-right: 6px; }
+.pg figcaption b { display: block; color: var(--ink); font-weight: 700; }
+.track.swap .pg { animation: rise .6s var(--ease) backwards; }
+.track.swap .pg:nth-child(2) { animation-delay: .05s; } .track.swap .pg:nth-child(3) { animation-delay: .1s; }
+.track.swap .pg:nth-child(4) { animation-delay: .15s; } .track.swap .pg:nth-child(5) { animation-delay: .2s; }
+.railbar { display: flex; align-items: center; gap: 14px; margin-top: -6px; }
+.prog { flex: 1; height: 3px; border-radius: 3px; background: var(--rule); overflow: hidden; }
+.prog i { display: block; height: 100%; width: 20%; border-radius: 3px; background: var(--gold); }
+.arrows { display: flex; gap: 8px; }
+.round { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--rule); display: grid; place-items: center; color: var(--ink);
+         transition: background-color .2s, border-color .2s, transform .2s var(--ease), opacity .2s; background: var(--sheet); flex: none; }
+.round:hover { border-color: var(--gold); }
+.round:active { transform: scale(.94); }
+.round:disabled { opacity: .35; cursor: default; }
+
+/* ───────── viewer ───────── */
+dialog.viewer { border: 0; padding: 0; margin: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; background: transparent; color: var(--paper); }
+dialog.viewer::backdrop { background: rgba(20,22,24,.88); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.vwrap { height: 100%; display: grid; grid-template-rows: auto 1fr auto; padding: calc(12px + env(safe-area-inset-top)) 14px calc(16px + env(safe-area-inset-bottom)); }
+.vtop { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.vtop .count { font-size: 14px; color: rgba(250,246,239,.75); flex: 1; }
+.vstage { position: relative; display: grid; place-items: center; min-height: 0; padding: 14px 0; touch-action: pan-y; }
+.vstage img { max-height: 100%; max-width: min(100%, 520px); height: auto; width: auto; border-radius: 12px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.7);
+              transition: transform .35s var(--ease), opacity .25s; user-select: none; -webkit-user-drag: none; }
+.vstage img.out-l { transform: translateX(-40px); opacity: 0; } .vstage img.out-r { transform: translateX(40px); opacity: 0; }
+.vbot { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.vbot .cap { font-family: 'Cormorant', Georgia, serif; font-size: 21px; font-weight: 600; text-align: center; min-width: 0; flex: 1; max-width: 420px; line-height: 1.15; }
+.viewer .round { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); color: var(--paper); }
+.viewer .round:hover { border-color: var(--gold-light); }
+.vdl { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; text-decoration: none; color: var(--ink);
+       background: var(--gold-light); border-radius: 999px; padding: 10px 16px; }
+
+/* ───────── verses ───────── */
+.verses { margin-top: 64px; color: var(--paper); border-radius: 28px; padding: 40px 24px 28px; text-align: center; position: relative; overflow: hidden;
+          background: radial-gradient(80% 60% at 50% 0%, rgba(217,190,140,.14), transparent 70%), linear-gradient(160deg, var(--green), #1d3532); }
+.verses .braid { display: block; margin: 0 auto 22px; }
+.verses .braid polyline { stroke-dasharray: 6 4; animation: weave 3.5s linear infinite; }
+.verses .braid polyline:nth-child(2) { animation-duration: 4.2s; } .verses .braid polyline:nth-child(3) { animation-duration: 5s; }
+@keyframes weave { to { stroke-dashoffset: -40; } }
+.vq { position: relative; min-height: 180px; display: grid; }
+.vq figure { grid-area: 1 / 1; display: flex; flex-direction: column; justify-content: center; align-items: center;
+             transition: opacity .7s ease, transform .9s var(--ease); }
+.vq figure[hidden] { display: flex; opacity: 0; transform: translateY(10px); pointer-events: none; }
+.vq blockquote { font-family: 'Cormorant', Georgia, serif; font-style: italic; font-weight: 500; font-size: clamp(25px, 6.4vw, 34px); line-height: 1.22;
+                 max-width: 24ch; text-wrap: balance; }
+.vq figcaption { margin-top: 14px; color: var(--gold-light); font-size: 15px; font-weight: 500; }
+.vnav { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 18px; }
+.dots { display: flex; gap: 7px; }
+.dots button { width: 8px; height: 8px; border-radius: 99px; background: rgba(250,246,239,.3); transition: width .4s var(--ease), background-color .3s; padding: 0; }
+.dots button[aria-current="true"] { width: 24px; background: var(--gold-light); }
+.verses .round { background: transparent; border-color: rgba(250,246,239,.22); color: var(--paper); }
+
+/* ───────── tip + footer ───────── */
+.tip { margin-top: 22px; display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; background: var(--linen); border-radius: 20px; padding: 18px; }
+.tip .ic { width: 40px; height: 40px; border-radius: 50%; background: var(--sheet); display: grid; place-items: center; color: var(--gold-ink); }
+.tip p { font-size: 15px; }
 .tip b { font-weight: 700; }
-
-footer { text-align: center; padding: 30px 16px 10px; }
+footer { text-align: center; padding: 44px 16px 8px; color: var(--soft); }
 footer svg { display: block; margin: 0 auto; }
-:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+footer .made { font-family: 'Cormorant', Georgia, serif; font-style: italic; font-weight: 500; font-size: 22px; color: var(--ink); margin-top: 10px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .year, .verses .braid polyline, .btn.primary::after { animation: none !important; }
+  .year path { stroke-dashoffset: 0; }
+  html { scroll-behavior: auto; }
+}
 </style>
 </head>
 <body>
+
 <header class="hero">
-  <svg class="emblem" width="84" height="77" viewBox="0 0 120 110" aria-hidden="true">
-    <path d="M60 6V40M50 16H70" stroke="#D9BE8C" stroke-width="3.6" stroke-linecap="round"/>
-    <circle cx="46" cy="70" r="25" fill="none" stroke="#D9BE8C" stroke-width="3.6"/>
-    <circle cx="74" cy="70" r="25" fill="none" stroke="#D9BE8C" stroke-width="3.6"/>
-  </svg>
-  <div class="kicker">With Christ at the center</div>
-  <h1><em>Marriage</em>Check-In Guides</h1>
+  <div class="halo a" aria-hidden="true"></div><div class="halo b" aria-hidden="true"></div>
+  <div class="seal" aria-hidden="true">
+    <div class="glow"></div>
+    <svg viewBox="0 0 208 208"><g class="year" id="year"></g></svg>
+    <svg viewBox="0 0 208 208" class="mark" fill="none" stroke="#D9BE8C" stroke-width="3.4" stroke-linecap="round">
+      <path class="x" d="M104 50V84M94 60H114" pathLength="1"/>
+      <circle cx="91" cy="113" r="23" pathLength="1" transform="rotate(-90 91 113)"/>
+      <circle class="c2" cx="117" cy="113" r="23" pathLength="1" transform="rotate(90 117 113)"/>
+    </svg>
+  </div>
+  <p class="tagline">With Christ at the center</p>
+  <h1><span class="ln"><span>Marriage</span></span><span class="ln"><span>Check-In Guides</span></span></h1>
   <p class="byline">by Jeff &amp; Renae Brobst</p>
-  <p class="sub">Use them on your phone, tablet, or computer, or print them out. Download both below.</p>
+  <p class="sub">A weekly check-in and a 12-month growth calendar. Use them on your phone, tablet, or computer, or print them out.</p>
   <ul class="uses" aria-label="Works on">
     <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg>Phone</li>
     <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="2.5" width="15" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg>Tablet</li>
@@ -107,44 +248,266 @@ footer svg { display: block; margin: 0 auto; }
 </header>
 
 <main>
-  <div class="cards">
-    <article class="card weekly">
-      <img class="cover" src="img/weekly-cover.jpg" alt="Cover of the Weekly Marriage Check-In Guide" width="112" height="199">
-      <div class="info">
-        <span class="tag">Weekly</span>
+  <section class="guides" aria-label="Downloads">
+    <article class="guide weekly">
+      <button class="book" data-open="w" aria-label="Look inside the weekly guide">
+        <img class="p2" src="img/pages/w04.webp" alt="" width="124" height="220">
+        <img class="p1" src="img/pages/w02.webp" alt="" width="124" height="220">
+        <img class="cv" src="img/weekly-cover.jpg" alt="Cover of the Weekly Marriage Check-In Guide" width="124" height="220">
+        <span class="peek" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></svg></span>
+      </button>
+      <div class="gi">
+        <p class="kind">Weekly</p>
         <h2>Marriage Check-In Guide</h2>
-        <p class="meta">17 pages · PDF · 271 KB</p>
+        <p class="meta">17 pages, 271 KB</p>
       </div>
-        <div class="btns">
-          <a class="btn primary" href="Weekly-Marriage-Check-In.pdf" download="Weekly Marriage Check-In.pdf">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download</a>
-          <a class="btn ghost" href="Weekly-Marriage-Check-In.pdf" target="_blank" rel="noopener">View</a>
-        </div>
+      <div class="btns">
+        <a class="btn primary" href="Weekly-Marriage-Check-In.pdf" download="Weekly Marriage Check-In.pdf">
+          <svg class="arrow" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download PDF
+          <svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></a>
+        <a class="btn ghost" href="Weekly-Marriage-Check-In.pdf" target="_blank" rel="noopener">Open</a>
+      </div>
     </article>
 
-    <article class="card monthly">
-      <img class="cover" src="img/monthly-cover.jpg" alt="Cover of the 12-Month Marriage Growth Calendar" width="112" height="199">
-      <div class="info">
-        <span class="tag">Monthly</span>
+    <article class="guide monthly">
+      <button class="book" data-open="m" aria-label="Look inside the 12-month calendar">
+        <img class="p2" src="img/pages/m10.webp" alt="" width="124" height="220">
+        <img class="p1" src="img/pages/m05.webp" alt="" width="124" height="220">
+        <img class="cv" src="img/monthly-cover.jpg" alt="Cover of the 12-Month Marriage Growth Calendar" width="124" height="220">
+        <span class="peek" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></svg></span>
+      </button>
+      <div class="gi">
+        <p class="kind">Monthly</p>
         <h2>12-Month Marriage Growth Calendar</h2>
-        <p class="meta">18 pages · PDF · 461 KB</p>
+        <p class="meta">18 pages, 461 KB</p>
       </div>
-        <div class="btns">
-          <a class="btn primary" href="Monthly-Marriage-Check-In.pdf" download="Monthly Marriage Check-In.pdf">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download</a>
-          <a class="btn ghost" href="Monthly-Marriage-Check-In.pdf" target="_blank" rel="noopener">View</a>
-        </div>
+      <div class="btns">
+        <a class="btn primary" href="Monthly-Marriage-Check-In.pdf" download="Monthly Marriage Check-In.pdf">
+          <svg class="arrow" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download PDF
+          <svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></a>
+        <a class="btn ghost" href="Monthly-Marriage-Check-In.pdf" target="_blank" rel="noopener">Open</a>
+      </div>
     </article>
-  </div>
+  </section>
+
+  <section class="sec" id="inside" aria-labelledby="inside-h">
+    <div class="sec-h">
+      <h2 id="inside-h">Look inside</h2>
+      <p>Swipe through the pages. Tap one to see it full size.</p>
+    </div>
+    <div class="tabs" role="tablist" data-set="w">
+      <button role="tab" aria-selected="true" aria-controls="track" data-set="w">Weekly guide</button>
+      <button role="tab" aria-selected="false" aria-controls="track" data-set="m">12-month calendar</button>
+      <span class="ind" aria-hidden="true"></span>
+    </div>
+    <div class="rail">
+      <div class="track" id="track" tabindex="0" aria-label="Page previews"></div>
+    </div>
+    <div class="railbar">
+      <div class="prog" aria-hidden="true"><i id="prog"></i></div>
+      <div class="arrows">
+        <button class="round" id="prev" aria-label="Previous pages"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6 8.5 12l6 6"/></svg></button>
+        <button class="round" id="next" aria-label="Next pages"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 6 6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="verses" aria-roledescription="carousel" aria-label="Verses from the weekly guide">
+    <svg class="braid" width="150" height="14" viewBox="0 0 150 14" aria-hidden="true" id="braid"></svg>
+    <div class="vq" id="vq" aria-live="polite"></div>
+    <div class="vnav">
+      <button class="round" id="vprev" aria-label="Previous verse"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6 8.5 12l6 6"/></svg></button>
+      <div class="dots" id="dots"></div>
+      <button class="round" id="vnext" aria-label="Next verse"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 6 6 6-6 6"/></svg></button>
+    </div>
+  </section>
 
   <div class="tip">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4.8l4.2 4.2L9.4 18.8l-4.9.7.7-4.9z"/><path d="M13 6.8l4.2 4.2"/></svg>
-    <span><b>Fill-in pages:</b> the weekly template and monthly scorecard can be typed on and checked off right on your phone, tablet, or computer (open the PDF in Files, Books, or any PDF app). Or print them and fill them in by hand.</span>
+    <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4.8l4.2 4.2L9.4 18.8l-4.9.7.7-4.9z"/><path d="M13 6.8l4.2 4.2"/></svg></span>
+    <p><b>Fill-in pages.</b> You can type on the weekly template and tick the monthly scorecard right on your phone, tablet, or computer. Open the PDF in Files, Books, or any PDF app. Or print it and write by hand.</p>
   </div>
 
   <footer>
-    <svg aria-hidden="true" width="150" height="14" viewBox="0 0 150 14"><polyline points="0.0,7.00 1.0,7.09 2.0,7.37 3.0,7.78 4.0,8.29 5.0,8.84 6.0,9.34 7.0,9.73 8.0,9.94 9.0,9.91 10.0,9.61 11.0,9.01 12.0,8.13 13.0,7.00 14.0,5.68 15.0,4.44 16.0,3.35 17.0,2.47 18.0,1.86 19.0,1.54 20.0,1.54 21.0,1.86 22.0,2.47 23.0,3.35 24.0,4.44 25.0,5.68 26.0,7.00 27.0,8.32 28.0,9.56 29.0,10.65 30.0,11.53 31.0,12.14 32.0,12.46 33.0,12.46 34.0,12.14 35.0,11.53 36.0,10.65 37.0,9.56 38.0,8.32 39.0,7.00 40.0,5.68 41.0,4.44 42.0,3.35 43.0,2.47 44.0,1.86 45.0,1.54 46.0,1.54 47.0,1.86 48.0,2.47 49.0,3.35 50.0,4.44 51.0,5.68 52.0,7.00 53.0,8.32 54.0,9.56 55.0,10.65 56.0,11.53 57.0,12.14 58.0,12.46 59.0,12.46 60.0,12.14 61.0,11.53 62.0,10.65 63.0,9.56 64.0,8.32 65.0,7.00 66.0,5.68 67.0,4.44 68.0,3.35 69.0,2.47 70.0,1.86 71.0,1.54 72.0,1.54 73.0,1.86 74.0,2.47 75.0,3.35 76.0,4.44 77.0,5.68 78.0,7.00 79.0,8.32 80.0,9.56 81.0,10.65 82.0,11.53 83.0,12.14 84.0,12.46 85.0,12.46 86.0,12.14 87.0,11.53 88.0,10.65 89.0,9.56 90.0,8.32 91.0,7.00 92.0,5.68 93.0,4.44 94.0,3.35 95.0,2.47 96.0,1.86 97.0,1.54 98.0,1.54 99.0,1.86 100.0,2.47 101.0,3.35 102.0,4.44 103.0,5.68 104.0,7.00 105.0,8.32 106.0,9.56 107.0,10.65 108.0,11.53 109.0,12.14 110.0,12.46 111.0,12.46 112.0,12.14 113.0,11.53 114.0,10.65 115.0,9.56 116.0,8.32 117.0,7.00 118.0,5.68 119.0,4.44 120.0,3.35 121.0,2.47 122.0,1.86 123.0,1.54 124.0,1.54 125.0,1.86 126.0,2.47 127.0,3.35 128.0,4.44 129.0,5.68 130.0,7.00 131.0,8.32 132.0,9.56 133.0,10.65 134.0,11.53 135.0,12.14 136.0,12.46 137.0,12.07 138.0,11.41 139.0,10.56 140.0,9.61 141.0,8.64 142.0,7.75 143.0,7.00 144.0,6.44 145.0,6.09 146.0,5.96 147.0,6.03 148.0,6.27 149.0,6.61 150.0,7.00" fill="none" stroke="#B08A4A" stroke-width="1.5" stroke-linecap="round"/><polyline points="0.0,7.00 1.0,7.28 2.0,7.42 3.0,7.37 4.0,7.13 5.0,6.68 6.0,6.08 7.0,5.35 8.0,4.57 9.0,3.81 10.0,3.15 11.0,2.68 12.0,2.47 13.0,2.58 14.0,3.03 15.0,4.06 16.0,5.26 17.0,6.56 18.0,7.88 19.0,9.16 20.0,10.30 21.0,11.26 22.0,11.97 23.0,12.39 24.0,12.50 25.0,12.28 26.0,11.76 27.0,10.97 28.0,9.94 29.0,8.74 30.0,7.44 31.0,6.12 32.0,4.84 33.0,3.70 34.0,2.74 35.0,2.03 36.0,1.61 37.0,1.50 38.0,1.72 39.0,2.24 40.0,3.03 41.0,4.06 42.0,5.26 43.0,6.56 44.0,7.88 45.0,9.16 46.0,10.30 47.0,11.26 48.0,11.97 49.0,12.39 50.0,12.50 51.0,12.28 52.0,11.76 53.0,10.97 54.0,9.94 55.0,8.74 56.0,7.44 57.0,6.12 58.0,4.84 59.0,3.70 60.0,2.74 61.0,2.03 62.0,1.61 63.0,1.50 64.0,1.72 65.0,2.24 66.0,3.03 67.0,4.06 68.0,5.26 69.0,6.56 70.0,7.88 71.0,9.16 72.0,10.30 73.0,11.26 74.0,11.97 75.0,12.39 76.0,12.50 77.0,12.28 78.0,11.76 79.0,10.97 80.0,9.94 81.0,8.74 82.0,7.44 83.0,6.12 84.0,4.84 85.0,3.70 86.0,2.74 87.0,2.03 88.0,1.61 89.0,1.50 90.0,1.72 91.0,2.24 92.0,3.03 93.0,4.06 94.0,5.26 95.0,6.56 96.0,7.88 97.0,9.16 98.0,10.30 99.0,11.26 100.0,11.97 101.0,12.39 102.0,12.50 103.0,12.28 104.0,11.76 105.0,10.97 106.0,9.94 107.0,8.74 108.0,7.44 109.0,6.12 110.0,4.84 111.0,3.70 112.0,2.74 113.0,2.03 114.0,1.61 115.0,1.50 116.0,1.72 117.0,2.24 118.0,3.03 119.0,4.06 120.0,5.26 121.0,6.56 122.0,7.88 123.0,9.16 124.0,10.30 125.0,11.26 126.0,11.97 127.0,12.39 128.0,12.50 129.0,12.28 130.0,11.76 131.0,10.97 132.0,9.94 133.0,8.74 134.0,7.44 135.0,6.12 136.0,4.84 137.0,3.93 138.0,3.35 139.0,3.10 140.0,3.15 141.0,3.47 142.0,3.98 143.0,4.62 144.0,5.30 145.0,5.95 146.0,6.50 147.0,6.91 148.0,7.13 149.0,7.15 150.0,7.00" fill="none" stroke="#23423D" stroke-width="1.5" stroke-linecap="round"/><polyline points="0.0,7.00 1.0,6.62 2.0,6.21 3.0,5.85 4.0,5.58 5.0,5.48 6.0,5.58 7.0,5.92 8.0,6.50 9.0,7.28 10.0,8.24 11.0,9.31 12.0,10.40 13.0,11.42 14.0,12.28 15.0,12.50 16.0,12.39 17.0,11.97 18.0,11.26 19.0,10.30 20.0,9.16 21.0,7.88 22.0,6.56 23.0,5.26 24.0,4.06 25.0,3.03 26.0,2.24 27.0,1.72 28.0,1.50 29.0,1.61 30.0,2.03 31.0,2.74 32.0,3.70 33.0,4.84 34.0,6.12 35.0,7.44 36.0,8.74 37.0,9.94 38.0,10.97 39.0,11.76 40.0,12.28 41.0,12.50 42.0,12.39 43.0,11.97 44.0,11.26 45.0,10.30 46.0,9.16 47.0,7.88 48.0,6.56 49.0,5.26 50.0,4.06 51.0,3.03 52.0,2.24 53.0,1.72 54.0,1.50 55.0,1.61 56.0,2.03 57.0,2.74 58.0,3.70 59.0,4.84 60.0,6.12 61.0,7.44 62.0,8.74 63.0,9.94 64.0,10.97 65.0,11.76 66.0,12.28 67.0,12.50 68.0,12.39 69.0,11.97 70.0,11.26 71.0,10.30 72.0,9.16 73.0,7.88 74.0,6.56 75.0,5.26 76.0,4.06 77.0,3.03 78.0,2.24 79.0,1.72 80.0,1.50 81.0,1.61 82.0,2.03 83.0,2.74 84.0,3.70 85.0,4.84 86.0,6.12 87.0,7.44 88.0,8.74 89.0,9.94 90.0,10.97 91.0,11.76 92.0,12.28 93.0,12.50 94.0,12.39 95.0,11.97 96.0,11.26 97.0,10.30 98.0,9.16 99.0,7.88 100.0,6.56 101.0,5.26 102.0,4.06 103.0,3.03 104.0,2.24 105.0,1.72 106.0,1.50 107.0,1.61 108.0,2.03 109.0,2.74 110.0,3.70 111.0,4.84 112.0,6.12 113.0,7.44 114.0,8.74 115.0,9.94 116.0,10.97 117.0,11.76 118.0,12.28 119.0,12.50 120.0,12.39 121.0,11.97 122.0,11.26 123.0,10.30 124.0,9.16 125.0,7.88 126.0,6.56 127.0,5.26 128.0,4.06 129.0,3.03 130.0,2.24 131.0,1.72 132.0,1.50 133.0,1.61 134.0,2.03 135.0,2.74 136.0,3.70 137.0,5.00 138.0,6.24 139.0,7.35 140.0,8.24 141.0,8.89 142.0,9.27 143.0,9.38 144.0,9.26 145.0,8.96 146.0,8.54 147.0,8.06 148.0,7.61 149.0,7.24 150.0,7.00" fill="none" stroke="#4A2137" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <svg width="64" height="59" viewBox="0 0 120 110" aria-hidden="true" fill="none" stroke="#B08A4A" stroke-width="3.4" stroke-linecap="round">
+      <path d="M60 6V40M50 16H70"/><circle cx="46" cy="70" r="25"/><circle cx="74" cy="70" r="25"/>
+    </svg>
+    <p class="made">Made by Jeff &amp; Renae Brobst</p>
   </footer>
 </main>
+
+<dialog class="viewer" id="viewer" aria-label="Page viewer">
+  <div class="vwrap">
+    <div class="vtop">
+      <span class="count" id="vcount"></span>
+      <a class="vdl" id="vdl" href="#" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download PDF</a>
+      <button class="round" id="vclose" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="vstage" id="vstage"><img id="vimg" alt=""></div>
+    <div class="vbot">
+      <button class="round" id="vleft" aria-label="Previous page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6 8.5 12l6 6"/></svg></button>
+      <p class="cap" id="vcap"></p>
+      <button class="round" id="vright" aria-label="Next page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 6 6 6-6 6"/></svg></button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const NS = 'http://www.w3.org/2000/svg';
+
+  /* the year ring: twelve month colors around the emblem */
+  const months = ['#476A8A','#A84A62','#4F7A70','#5A7B3B','#7A5A93','#93681B','#2C6E80','#A65A33','#76692A','#8E2F3C','#7A5238','#284F42'];
+  const year = document.getElementById('year');
+  const C = 104, R = 94, gap = 3.4;
+  const pt = a => { const r = (a - 90) * Math.PI / 180; return [C + R * Math.cos(r), C + R * Math.sin(r)]; };
+  months.forEach((col, i) => {
+    const [x0, y0] = pt(i * 30 + gap / 2), [x1, y1] = pt((i + 1) * 30 - gap / 2);
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('d', `M${x0.toFixed(2)} ${y0.toFixed(2)}A${R} ${R} 0 0 1 ${x1.toFixed(2)} ${y1.toFixed(2)}`);
+    p.setAttribute('stroke', col); p.setAttribute('stroke-width', '7'); p.setAttribute('fill', 'none');
+    p.setAttribute('stroke-linecap', 'round'); p.setAttribute('pathLength', '1');
+    p.style.animationDelay = (0.35 + i * 0.06) + 's';
+    year.appendChild(p);
+  });
+
+  /* three-strand braid */
+  const braid = document.getElementById('braid');
+  [['#D9BE8C', 0], ['#9FC2B5', 1], ['#D7A3B3', 2]].forEach(([col, k]) => {
+    const pts = [];
+    for (let x = 0; x <= 150; x += 1.5) {
+      const t = Math.min(1, x / 14, (150 - x) / 14);
+      pts.push(`${x},${(7 + 5.4 * t * Math.sin(2 * Math.PI * x / 26 + k * 2 * Math.PI / 3)).toFixed(2)}`);
+    }
+    const pl = document.createElementNS(NS, 'polyline');
+    pl.setAttribute('points', pts.join(' ')); pl.setAttribute('fill', 'none'); pl.setAttribute('stroke', col);
+    pl.setAttribute('stroke-width', '1.6'); pl.setAttribute('stroke-linecap', 'round');
+    braid.appendChild(pl);
+  });
+
+  /* download press feedback */
+  document.querySelectorAll('.btn.primary').forEach(b => b.addEventListener('click', () => {
+    b.classList.remove('go'); void b.offsetWidth; b.classList.add('go');
+    setTimeout(() => b.classList.remove('go'), 1800);
+  }));
+
+  /* page previews */
+  const sets = {
+    w: { pdf: 'Weekly-Marriage-Check-In.pdf', name: 'Weekly Marriage Check-In.pdf', pages: [
+      ['w01','Cover','Weekly Marriage Check-In'], ['w02','Before you begin','Establish the rhythm'], ['w03','How we talk','Ground rules'],
+      ['w04','Your hour together','The weekly agenda'], ['w05','Step 1','Open in prayer'], ['w06','Step 2','Reconnect, encourage, and share'],
+      ['w07','Step 3','Personal, emotional, and spiritual check-in'], ['w08','Step 4','Address concerns and repair tensions'],
+      ['w10','Step 5','Coordinate the week ahead'], ['w12','Step 6','Invest in your marriage'], ['w13','Step 7','Close with appreciation and prayer'],
+      ['w14','Once a month','Monthly planning add-on'], ['w16','Fill in each week','Weekly check-in template'] ] },
+    m: { pdf: 'Monthly-Marriage-Check-In.pdf', name: 'Monthly Marriage Check-In.pdf', pages: [
+      ['m01','Cover','12-Month Marriage Growth Calendar'], ['m02','Start here','How to use it'], ['m03','Track each week','Monthly scorecard'],
+      ['m04','January','Reset, vision, and unity'], ['m05','February','Appreciation and affection'], ['m06','March','Communication and conflict'],
+      ['m07','April','Friendship and fun'], ['m08','May','Service and shared load'], ['m09','June','Health, rest, and margin'],
+      ['m10','July','Trust and transparency'], ['m11','August','Personal growth and encouragement'], ['m12','September','Financial teamwork'],
+      ['m13','October','Romance and pursuit'], ['m14','November','Gratitude, generosity, and family culture'],
+      ['m15','December','Reflection, celebration, and renewal'], ['m16','Every week','Weekly marriage meeting agenda'],
+      ['m17','For each goal','Simple goal-setting framework'] ] }
+  };
+  const track = document.getElementById('track'), tabs = document.querySelector('.tabs'), prog = document.getElementById('prog');
+  let current = 'w';
+
+  function render(set) {
+    current = set;
+    tabs.dataset.set = set;
+    tabs.querySelectorAll('button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.set === set)));
+    track.innerHTML = sets[set].pages.map(([id, k, t], i) =>
+      `<figure class="pg"><button data-i="${i}" aria-label="View ${k}: ${t}"><img loading="lazy" decoding="async" src="img/pages/${id}.webp" alt="${k}: ${t}" width="210" height="373"></button>` +
+      `<figcaption><b>${k}</b>${t}</figcaption></figure>`).join('');
+    track.querySelectorAll('img').forEach(img => { if (img.complete && img.naturalWidth) img.classList.add('in'); else img.onload = () => img.classList.add('in'); });
+    track.scrollLeft = 0;
+    track.classList.remove('swap'); void track.offsetWidth; if (!reduce) track.classList.add('swap');
+    updateBar();
+  }
+  tabs.addEventListener('click', e => { const b = e.target.closest('button'); if (b && b.dataset.set !== current) render(b.dataset.set); });
+  tabs.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const n = current === 'w' ? 'm' : 'w'; render(n); tabs.querySelector(`[data-set="${n}"]`).focus(); }
+  });
+
+  function updateBar() {
+    const max = track.scrollWidth - track.clientWidth;
+    const vis = Math.max(8, track.clientWidth / track.scrollWidth * 100);
+    prog.style.width = vis + '%';
+    prog.style.transform = `translateX(${max > 0 ? (track.scrollLeft / max) * (100 / vis * 100 - 100) : 0}%)`;
+    document.getElementById('prev').disabled = track.scrollLeft < 4;
+    document.getElementById('next').disabled = track.scrollLeft > max - 4;
+  }
+  track.addEventListener('scroll', () => requestAnimationFrame(updateBar), { passive: true });
+  addEventListener('resize', updateBar);
+  const step = () => (track.querySelector('.pg')?.offsetWidth || 200) + 14;
+  document.getElementById('prev').onclick = () => track.scrollBy({ left: -step() * 2, behavior: reduce ? 'auto' : 'smooth' });
+  document.getElementById('next').onclick = () => track.scrollBy({ left: step() * 2, behavior: reduce ? 'auto' : 'smooth' });
+
+  /* full-size viewer */
+  const dlg = document.getElementById('viewer'), vimg = document.getElementById('vimg');
+  let vi = 0;
+  function show(i, dir) {
+    const pages = sets[current].pages;
+    vi = (i + pages.length) % pages.length;
+    const [id, k, t] = pages[vi];
+    const apply = () => {
+      vimg.src = `img/pages/${id}.webp`; vimg.alt = `${k}: ${t}`;
+      document.getElementById('vcap').textContent = `${k}: ${t}`;
+      document.getElementById('vcount').textContent = `Page ${vi + 1} of ${pages.length}`;
+      vimg.classList.remove('out-l', 'out-r');
+      [1, -1].forEach(d => { const n = pages[(vi + d + pages.length) % pages.length]; new Image().src = `img/pages/${n[0]}.webp`; });
+    };
+    if (dir && !reduce) { vimg.classList.add(dir > 0 ? 'out-l' : 'out-r'); setTimeout(apply, 180); } else apply();
+    const dl = document.getElementById('vdl'); dl.href = sets[current].pdf; dl.setAttribute('download', sets[current].name);
+  }
+  function open(set, i) { if (set !== current) render(set); show(i); dlg.showModal(); }
+  track.addEventListener('click', e => { const b = e.target.closest('button[data-i]'); if (b) open(current, +b.dataset.i); });
+  document.querySelectorAll('.book').forEach(b => b.addEventListener('click', () => open(b.dataset.open, 0)));
+  document.getElementById('vleft').onclick = () => show(vi - 1, -1);
+  document.getElementById('vright').onclick = () => show(vi + 1, 1);
+  document.getElementById('vclose').onclick = () => dlg.close();
+  dlg.addEventListener('keydown', e => { if (e.key === 'ArrowRight') show(vi + 1, 1); if (e.key === 'ArrowLeft') show(vi - 1, -1); });
+  const stage = document.getElementById('vstage');
+  let sx = null, moved = false;
+  stage.addEventListener('pointerdown', e => { sx = e.clientX; moved = false; });
+  stage.addEventListener('pointerup', e => {
+    if (sx === null) return; const dx = e.clientX - sx; sx = null;
+    if (Math.abs(dx) > 40) { moved = true; show(vi + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1); }
+  });
+  stage.addEventListener('click', e => { if (!moved && e.target === stage) dlg.close(); });
+
+  /* verses from the weekly guide */
+  const verses = [
+    ['Be completely humble and gentle; be patient, bearing with one another in love.', 'Ephesians 4:2'],
+    ['Everyone should be quick to listen, slow to speak and slow to become angry.', 'James 1:19'],
+    ['Therefore encourage one another and build each other up.', '1 Thessalonians 5:11'],
+    ['Carry each other’s burdens, and in this way you will fulfill the law of Christ.', 'Galatians 6:2'],
+    ['Do not let the sun go down while you are still angry.', 'Ephesians 4:26'],
+    ['Two are better than one, because they have a good return for their labor.', 'Ecclesiastes 4:9'],
+    ['Above all, clothe yourselves with love, which binds us all together in perfect harmony.', 'Colossians 3:14'],
+    ['Let all that you do be done in love.', '1 Corinthians 16:14']
+  ];
+  const vq = document.getElementById('vq'), dots = document.getElementById('dots');
+  vq.innerHTML = verses.map(([q, r], i) => `<figure ${i ? 'hidden' : ''}><blockquote>“${q}”</blockquote><figcaption>${r}</figcaption></figure>`).join('');
+  dots.innerHTML = verses.map((_, i) => `<button aria-label="Verse ${i + 1}" aria-current="${i === 0}"></button>`).join('');
+  let vk = 0, timer = null;
+  function verse(n) {
+    vk = (n + verses.length) % verses.length;
+    vq.querySelectorAll('figure').forEach((f, i) => f.hidden = i !== vk);
+    dots.querySelectorAll('button').forEach((d, i) => d.setAttribute('aria-current', String(i === vk)));
+  }
+  const start = () => { if (!reduce) { clearInterval(timer); timer = setInterval(() => verse(vk + 1), 7000); } };
+  const stop = () => clearInterval(timer);
+  document.getElementById('vprev').onclick = () => { verse(vk - 1); start(); };
+  document.getElementById('vnext').onclick = () => { verse(vk + 1); start(); };
+  dots.addEventListener('click', e => { const b = e.target.closest('button'); if (b) { verse([...dots.children].indexOf(b)); start(); } });
+  const vs = document.querySelector('.verses');
+  vs.addEventListener('pointerenter', stop); vs.addEventListener('pointerleave', start);
+  vs.addEventListener('focusin', stop); vs.addEventListener('focusout', start);
+  new IntersectionObserver(([e]) => e.isIntersecting ? start() : stop(), { threshold: .3 }).observe(vs);
+
+  render('w');
+})();
+</script>
 </body>
 </html>
