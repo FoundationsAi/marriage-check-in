@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Marriage Check-In Guides</title>
-<meta name="description" content="Download the Weekly Marriage Check-In Guide and the 12-Month Marriage Growth Calendar.">
+<meta name="description" content="By Jeff &amp; Renae Brobst. Download the Weekly Marriage Check-In Guide and the 12-Month Marriage Growth Calendar for your phone, tablet, or computer, or print them.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#2f3238">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Marriage Check-In Guides">
-<meta property="og:description" content="Weekly Check-In Guide + 12-Month Growth Calendar. Tap to download both PDFs.">
+<meta property="og:description" content="By Jeff &amp; Renae Brobst. Weekly guide + 12-month calendar for your phone, tablet, laptop, or print.">
 <meta property="og:url" content="https://foundationsai.github.io/marriage-check-in/">
 <meta property="og:image" content="https://foundationsai.github.io/marriage-check-in/img/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -35,7 +35,7 @@ a { color: inherit; }
 
 .hero { position: relative; overflow: hidden; color: var(--paper); text-align: center;
         background: linear-gradient(135deg, var(--green) 0%, #2f3238 50%, var(--wine) 100%);
-        padding: calc(52px + env(safe-area-inset-top)) 20px 120px; }
+        padding: calc(48px + env(safe-area-inset-top)) 20px 118px; }
 .hero::before, .hero::after { content: ''; position: absolute; width: 360px; height: 360px; border-radius: 50%;
         border: 1.5px solid rgba(217,190,140,.14); bottom: -250px; }
 .hero::before { left: calc(50% - 290px); }
@@ -44,7 +44,16 @@ a { color: inherit; }
 .kicker { font-size: 11px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-light); margin-top: 20px; }
 h1 { font-family: 'Cormorant', serif; font-weight: 600; font-size: clamp(40px, 11vw, 58px); line-height: 1; margin-top: 12px; letter-spacing: -.01em; }
 h1 em { font-style: italic; font-weight: 500; color: var(--gold-light); display: block; font-size: .78em; margin-bottom: 4px; }
-.sub { margin: 14px auto 0; max-width: 30ch; font-size: 16px; color: rgba(250,246,239,.85); }
+.byline { font-family: 'Cormorant', serif; font-style: italic; font-weight: 500; font-size: 21px; color: var(--gold-light); margin-top: 14px;
+          display: flex; align-items: center; justify-content: center; gap: 12px; }
+.byline::before, .byline::after { content: ''; width: 28px; height: 1px; background: var(--gold-light); opacity: .55; }
+.sub { margin: 14px auto 0; max-width: 32ch; font-size: 16px; color: rgba(250,246,239,.88); text-wrap: balance; }
+.uses { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 16px auto 0; max-width: 420px; padding: 0; list-style: none; }
+.uses li { display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+           color: var(--gold-light); border: 1px solid rgba(217,190,140,.4); border-radius: 999px; padding: 5px 10px 5px 8px; }
+@media (max-width: 379px) { .uses { gap: 4px; } .uses li { font-size: 9.5px; letter-spacing: .06em; padding: 5px 8px 5px 7px; gap: 4px; } .uses svg { width: 13px; height: 13px; } }
+@media (min-width: 480px) { .uses { gap: 8px; } .uses li { font-size: 11.5px; letter-spacing: .12em; padding: 6px 12px 6px 10px; } }
+.uses svg { flex: none; }
 
 main { max-width: 860px; margin: -84px auto 0; padding: 0 16px calc(40px + env(safe-area-inset-bottom)); position: relative; }
 .cards { display: grid; gap: 16px; }
@@ -87,7 +96,14 @@ footer svg { display: block; margin: 0 auto; }
   </svg>
   <div class="kicker">With Christ at the center</div>
   <h1><em>Marriage</em>Check-In Guides</h1>
-  <p class="sub">Download both PDFs below to keep on your phone or print.</p>
+  <p class="byline">by Jeff &amp; Renae Brobst</p>
+  <p class="sub">Use them on your phone, tablet, or computer, or print them out. Download both below.</p>
+  <ul class="uses" aria-label="Works on">
+    <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg>Phone</li>
+    <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="2.5" width="15" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg>Tablet</li>
+    <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="5" width="15" height="10.5" rx="1.6"/><path d="M2.5 19h19"/></svg>Laptop</li>
+    <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8.5V3.5h10v5"/><rect x="3.5" y="8.5" width="17" height="8" rx="1.8"/><path d="M7 14h10v6.5H7z"/></svg>Print</li>
+  </ul>
 </header>
 
 <main>
@@ -123,7 +139,7 @@ footer svg { display: block; margin: 0 auto; }
 
   <div class="tip">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4.8l4.2 4.2L9.4 18.8l-4.9.7.7-4.9z"/><path d="M13 6.8l4.2 4.2"/></svg>
-    <span><b>Fill-in pages:</b> the weekly template and monthly scorecard can be typed on and checked off. Save the PDF to Files (iPhone) or open it in a PDF app (Android) to fill it in.</span>
+    <span><b>Fill-in pages:</b> the weekly template and monthly scorecard can be typed on and checked off right on your phone, tablet, or computer (open the PDF in Files, Books, or any PDF app). Or print them and fill them in by hand.</span>
   </div>
 
   <footer>
